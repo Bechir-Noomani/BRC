@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-transparent text-white">
+    <div className="min-h-screen bg-transparent text-white pt-20">
       <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div

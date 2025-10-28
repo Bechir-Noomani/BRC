@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import CategoriesPage from './pages/CategoriesPage';
 import CategoryPage from './pages/CategoryPage';
@@ -28,6 +29,7 @@ function App() {
   return (
     <AppProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen" style={globalBackground}>
           <Header />
           <main>

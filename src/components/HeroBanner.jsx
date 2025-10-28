@@ -63,7 +63,7 @@ const HeroBanner = () => {
   };
 
   return (
-    <div className="relative pt-20 bg-transparent">
+    <div className="relative bg-transparent">
       {/* Full-Screen Hero Image Section with Creative Text */}
       <div ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax Scroll Effect */}

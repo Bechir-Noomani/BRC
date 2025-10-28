@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent pt-20">
       <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
