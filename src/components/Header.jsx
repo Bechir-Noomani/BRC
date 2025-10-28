@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Search, ChevronRight, Phone, Mail } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -70,7 +70,7 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
@@ -78,12 +78,12 @@ const Header = () => {
       setMobileSearchOpen(false);
       setSearchFocused(false);
     }
-  };
+  }, [searchQuery]);
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { name: 'Catégories', href: '/categories' },
     { name: 'Contact', href: '/contact' }
-  ];
+  ], []);
 
   const navList = {
     visible: {
@@ -150,18 +150,23 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md" role="banner">
         <div className="border-b border-gray-200/50" />
 
-        <nav className="relative">
+        <nav className="relative" role="navigation" aria-label="Navigation principale">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               {/* Logo */}
-              <a href="/" className="flex items-center gap-3 group">
+              <a 
+                href="/" 
+                className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-red-600 rounded-lg transition-all"
+                aria-label="Brocaramilou - Retour à l'accueil"
+              >
                 <img 
                   src="/logo/logo.png?v=2" 
-                  alt="BRC Logo" 
+                  alt="Logo Brocaramilou" 
                   className="w-14 h-14 object-contain"
+                  loading="eager"
                 />
                 <div className="hidden sm:block">
                   <div className="text-gray-900 font-bold text-2xl tracking-tight">Brocaramilou</div>
@@ -170,12 +175,13 @@ const Header = () => {
               </a>
 
               {/* Navigation Items */}
-              <div className="hidden lg:flex items-center gap-8">
+              <div className="hidden lg:flex items-center gap-8" role="menubar">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-red-600 transition-colors font-semibold text-base"
+                    className="text-gray-700 hover:text-red-600 transition-colors font-semibold text-base focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-2 py-1"
+                    role="menuitem"
                   >
                     {item.name}
                   </a>
@@ -184,28 +190,33 @@ const Header = () => {
 
               {/* Desktop Search - Expandable */}
               <div className="hidden lg:flex items-center" ref={searchRef}>
-                <motion.div
+                <motion.form
+                  onSubmit={handleSearch}
                   animate={{ width: searchFocused ? 400 : 250 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   className="relative"
+                  role="search"
+                  aria-label="Recherche de produits"
                 >
+                  <label htmlFor="desktop-search" className="sr-only">
+                    Rechercher des produits
+                  </label>
                   <input
-                    type="text"
+                    id="desktop-search"
+                    type="search"
                     placeholder="Rechercher des produits..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setSearchFocused(true)}
-                    onKeyPress={(e) => {
-                      if (e.key === 'Enter') {
-                        handleSearch(e);
-                      }
-                    }}
                     className="w-full pl-4 pr-10 py-2.5 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition-all"
+                    aria-autocomplete="list"
+                    aria-controls="search-results"
+                    aria-expanded={searchFocused && searchResults.length > 0}
                   />
                   <button 
-                    onClick={handleSearch}
-                    type="button"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-600 hover:text-red-600 transition-colors"
+                    type="submit"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-600 hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded"
+                    aria-label="Lancer la recherche"
                   >
                     <Search className="w-4 h-4" />
                   </button>
@@ -214,27 +225,32 @@ const Header = () => {
                   <AnimatePresence>
                     {searchFocused && searchResults.length > 0 && (
                       <motion.div
+                        id="search-results"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
                         className="absolute top-full mt-2 left-0 right-0 bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden z-50"
+                        role="listbox"
+                        aria-label="Résultats de recherche"
                       >
                         <div className="max-h-96 overflow-y-auto">
                           {searchResults.map((product) => (
                             <a
                               key={product.id}
                               href={`/product/${product.id}`}
-                              className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                              className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 focus:outline-none focus:bg-gray-50"
                               onClick={() => {
                                 setSearchFocused(false);
                                 setSearchQuery('');
                               }}
+                              role="option"
                             >
                               <img
                                 src={product.image}
-                                alt={product.name}
+                                alt=""
                                 className="w-12 h-12 object-cover rounded-md"
+                                loading="lazy"
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-semibold text-sm text-gray-900 truncate">
@@ -244,29 +260,35 @@ const Header = () => {
                                   {product.brand} • {product.categoryName}
                                 </p>
                               </div>
-                              <ChevronRight className="w-4 h-4 text-gray-400" />
+                              <ChevronRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
                             </a>
                           ))}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </motion.form>
               </div>
 
               {/* Mobile Search & Menu Buttons */}
               <div className="lg:hidden flex items-center gap-2">
                 <button
                   onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
-                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all"
+                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
+                  aria-label={mobileSearchOpen ? "Fermer la recherche" : "Ouvrir la recherche"}
+                  aria-expanded={mobileSearchOpen}
+                  aria-controls="mobile-search"
                 >
-                  <Search className="w-6 h-6" />
+                  <Search className="w-6 h-6" aria-hidden="true" />
                 </button>
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all"
+                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
+                  aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                  aria-expanded={menuOpen}
+                  aria-controls="mobile-menu"
                 >
-                  {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                  {menuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
                 </button>
               </div>
             </div>
@@ -281,55 +303,67 @@ const Header = () => {
             <div
               onClick={() => setMobileSearchOpen(false)}
               className="fixed inset-0 bg-black/20 z-30 lg:hidden"
+              aria-hidden="true"
             />
             <motion.div
+              id="mobile-search"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed top-20 left-0 right-0 z-40 bg-white shadow-lg lg:hidden overflow-hidden"
+              role="search"
+              aria-label="Recherche mobile"
             >
             <div className="p-4">
-              <div className="relative">
+              <form onSubmit={handleSearch} className="relative">
+                <label htmlFor="mobile-search-input" className="sr-only">
+                  Rechercher des produits
+                </label>
                 <input
-                  type="text"
+                  id="mobile-search-input"
+                  type="search"
                   placeholder="Rechercher des produits..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={(e) => {
-                    if (e.key === 'Enter') {
-                      handleSearch(e);
-                    }
-                  }}
                   className="w-full pl-4 pr-10 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm"
                   autoFocus
+                  aria-autocomplete="list"
+                  aria-controls="mobile-search-results"
                 />
                 <button 
-                  onClick={handleSearch}
-                  type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                  type="submit"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-700"
+                  aria-label="Lancer la recherche"
                 >
-                  <Search className="w-4 h-4" />
+                  <Search className="w-4 h-4" aria-hidden="true" />
                 </button>
-              </div>
+              </form>
 
               {/* Mobile Search Results */}
               {searchResults.length > 0 && (
-                <div className="mt-3 bg-white rounded-lg border border-gray-200 max-h-80 overflow-y-auto">
+                <div 
+                  id="mobile-search-results"
+                  className="mt-3 bg-white rounded-lg border border-gray-200 max-h-80 overflow-y-auto"
+                  role="listbox"
+                  aria-label="Résultats de recherche mobile"
+                >
                   {searchResults.map((product) => (
                     <a
                       key={product.id}
                       href={`/product/${product.id}`}
-                      className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                      className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 focus:outline-none focus:bg-gray-50"
                       onClick={() => {
                         setMobileSearchOpen(false);
                         setSearchQuery('');
                       }}
+                      role="option"
                     >
                       <img
                         src={product.image}
-                        alt={product.name}
+                        alt=""
                         className="w-12 h-12 object-cover rounded-md"
+                        loading="lazy"
                       />
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-sm text-gray-900 truncate">
@@ -339,7 +373,7 @@ const Header = () => {
                           {product.brand}
                         </p>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
+                      <ChevronRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
@@ -356,14 +390,19 @@ const Header = () => {
             <div
               onClick={() => setMenuOpen(false)}
               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              aria-hidden="true"
             />
 
-            <motion.div
+            <motion.aside
+              id="mobile-menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white/95 backdrop-blur-lg shadow-2xl z-40 lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white/95 backdrop-blur-lg shadow-2xl z-50 lg:hidden overflow-y-auto"
+              role="dialog"
+              aria-label="Menu de navigation mobile"
+              aria-modal="true"
             >
               <div className="pt-20 pb-8 px-6">
                 <motion.nav
@@ -372,6 +411,8 @@ const Header = () => {
                   animate="visible"
                   exit="hidden"
                   className="space-y-2"
+                  role="menu"
+                  aria-label="Navigation mobile"
                 >
                   {navItems.map((item) => (
                     <motion.a
@@ -379,10 +420,11 @@ const Header = () => {
                       href={item.href}
                       variants={navItem}
                       onClick={() => setMenuOpen(false)}
-                      className="group flex items-center justify-between px-4 py-4 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                      className="group flex items-center justify-between px-4 py-4 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-600"
+                      role="menuitem"
                     >
                       <span className="font-medium text-lg">{item.name}</span>
-                      <ChevronRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+                      <ChevronRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden="true" />
                     </motion.a>
                   ))}
                 </motion.nav>
@@ -397,27 +439,32 @@ const Header = () => {
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-4">
                       <img 
                         src="/logo/logo.png?v=2" 
-                        alt="BRC Logo" 
+                        alt="Logo Brocaramilou" 
                         className="w-16 h-16 object-contain mix-blend-multiply"
+                        loading="lazy"
                       />
                     </div>
                     <h3 className="font-bold text-gray-900 text-lg">Brocaramilou</h3>
                     <p className="text-gray-500 text-sm mt-1">Fournitures professionnelles</p>
                     
-                    <div className="mt-6 space-y-2 text-sm text-gray-600">
+                    <address className="mt-6 space-y-2 text-sm text-gray-600 not-italic">
                       <div className="flex items-center justify-center gap-2">
-                        <Phone className="w-4 h-4" />
-                        <span>+216 XX XXX XXX</span>
+                        <Phone className="w-4 h-4" aria-hidden="true" />
+                        <a href="tel:+216XXXXXXXX" className="hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-1">
+                          +216 XX XXX XXX
+                        </a>
                       </div>
                       <div className="flex items-center justify-center gap-2">
-                        <Mail className="w-4 h-4" />
-                        <span>contact@brocaramilou.tn</span>
+                        <Mail className="w-4 h-4" aria-hidden="true" />
+                        <a href="mailto:contact@brocaramilou.tn" className="hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-1">
+                          contact@brocaramilou.tn
+                        </a>
                       </div>
-                    </div>
+                    </address>
                   </div>
                 </motion.div>
               </div>
-            </motion.div>
+            </motion.aside>
           </>
         )}
       </AnimatePresence>

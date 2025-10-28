@@ -45,28 +45,28 @@ const StatsShowcase = () => {
       suffix: '+',
       label: 'Marques Premium',
       description: 'Partenaires de confiance',
-      icon: Award,
+      icon: '/icons/trend-up.svg',
     },
     {
       value: 10000,
       suffix: '+',
       label: 'Produits Disponibles',
       description: 'Catalogue complet',
-      icon: Package,
+      icon: '/icons/shopping-cart.svg',
     },
     {
       value: 50,
       suffix: '+',
       label: 'Catégories',
       description: 'Gamme variée',
-      icon: Grid3x3,
+      icon: '/icons/category-2.svg',
     },
     {
       value: 5000,
       suffix: '+',
       label: 'Clients Satisfaits',
       description: 'Depuis 1995',
-      icon: Star,
+      icon: '/icons/users.svg',
     },
   ];
 
@@ -147,7 +147,7 @@ const StatsShowcase = () => {
                 <div className="flex justify-center mb-6">
                   <div className="relative">
                     <div className="w-16 h-16 bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                      <stat.icon className="w-8 h-8 text-red-600" strokeWidth={2} />
+                      <img src={stat.icon} alt="" className="w-8 h-8" style={{ filter: 'invert(23%) sepia(89%) saturate(2476%) hue-rotate(346deg) brightness(94%) contrast(97%)' }} />
                     </div>
                     {/* Small indicator dot */}
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full border-2 border-white" />
@@ -172,9 +172,6 @@ const StatsShowcase = () => {
                 <p className="text-sm text-gray-500 font-medium">
                   {stat.description}
                 </p>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl" />
               </div>
 
               {/* Connecting line between stats (desktop only) */}
