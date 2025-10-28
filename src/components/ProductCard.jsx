@@ -28,10 +28,7 @@ const ProductCard = ({ product, index = 0 }) => {
         {product.subcategoryName && (
           <p className="text-xs text-gray-400 mb-1">{product.subcategoryName}</p>
         )}
-        <p className="text-sm text-gray-500 mb-2">{product.categoryName}</p>
-        {product.price && (
-          <p className="text-lg font-bold text-red-600 mb-4">{product.price}</p>
-        )}
+        <p className="text-sm text-gray-500 mb-4">{product.categoryName}</p>
         <Link to={`/product/${product.id}`}>
           <motion.button 
             whileHover={{ scale: 1.02 }}

@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://brocaramilou.tn/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

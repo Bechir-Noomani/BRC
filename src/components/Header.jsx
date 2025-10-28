@@ -244,9 +244,7 @@ const Header = () => {
                                   {product.brand} • {product.categoryName}
                                 </p>
                               </div>
-                              <span className="text-sm font-bold text-red-600">
-                                {product.price}
-                              </span>
+                              <ChevronRight className="w-4 h-4 text-gray-400" />
                             </a>
                           ))}
                         </div>
@@ -341,9 +339,7 @@ const Header = () => {
                           {product.brand}
                         </p>
                       </div>
-                      <span className="text-sm font-bold text-red-600">
-                        {product.price}
-                      </span>
+                      <ChevronRight className="w-4 h-4 text-gray-400" />
                     </a>
                   ))}
                 </div>

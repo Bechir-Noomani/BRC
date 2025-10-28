@@ -81,14 +81,9 @@ const ProductPage = () => {
                   <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     {product.name}
                   </h1>
-                  <div className="text-sm text-gray-500 mb-4">
+                  <div className="text-sm text-gray-500 mb-6">
                     Catégorie: {product.category}
                   </div>
-                  {product.price && (
-                    <div className="text-3xl font-bold text-red-600 mb-6">
-                      {product.price}
-                    </div>
-                  )}
                 </div>
 
                 <div>
