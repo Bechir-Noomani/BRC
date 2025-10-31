@@ -151,7 +151,7 @@ const ContactPage = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Votre message"
+                  placeholder="Ecrire votre besoin"
                   rows={5}
                   required
                   className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 resize-none transition-all"
