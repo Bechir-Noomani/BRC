@@ -89,7 +89,7 @@ const HeroBanner = () => {
         {/* Dark Filter Overlay */}
         <motion.div 
           style={{ opacity }}
-          className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-black/90" 
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" 
         />
 
         {/* Professional Hero Content */}
@@ -317,8 +317,8 @@ const HeroBanner = () => {
                 transition={{ duration: 0.5 }}
                 className="flex justify-center"
               >
-                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
-                  <Package className="w-10 h-10 text-red-600" />
+                <div className="w-20 h-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700 rounded-full flex items-center justify-center">
+                  <Package className="w-10 h-10 text-red-500" />
                 </div>
               </motion.div>
               <h3 className="text-2xl font-bold text-gray-900">Large gamme de produits</h3>
@@ -339,8 +339,8 @@ const HeroBanner = () => {
                 transition={{ duration: 0.5 }}
                 className="flex justify-center"
               >
-                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
-                  <Award className="w-10 h-10 text-red-600" />
+                <div className="w-20 h-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700 rounded-full flex items-center justify-center">
+                  <Award className="w-10 h-10 text-red-500" />
                 </div>
               </motion.div>
               <h3 className="text-2xl font-bold text-gray-900">Qualité garantie</h3>
@@ -361,8 +361,8 @@ const HeroBanner = () => {
                 transition={{ duration: 0.5 }}
                 className="flex justify-center"
               >
-                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
-                  <Truck className="w-10 h-10 text-red-600" />
+                <div className="w-20 h-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700 rounded-full flex items-center justify-center">
+                  <Truck className="w-10 h-10 text-red-500" />
                 </div>
               </motion.div>
               <h3 className="text-2xl font-bold text-gray-900">Livraison rapide</h3>
