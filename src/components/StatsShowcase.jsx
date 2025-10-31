@@ -137,25 +137,25 @@ const StatsShowcase = () => {
               className="relative group"
             >
               {/* Card with subtle border */}
-              <div className="relative p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700 shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 {/* Corner Accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
-                  <div className="absolute top-0 right-0 w-8 h-8 bg-red-50 transform rotate-45 translate-x-4 -translate-y-4" />
+                  <div className="absolute top-0 right-0 w-8 h-8 bg-red-600/20 transform rotate-45 translate-x-4 -translate-y-4" />
                 </div>
 
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div className="relative">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-50 to-red-100 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-600/20 to-red-500/30 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                       <img src={stat.icon} alt="" className="w-8 h-8" style={{ filter: 'invert(23%) sepia(89%) saturate(2476%) hue-rotate(346deg) brightness(94%) contrast(97%)' }} />
                     </div>
                     {/* Small indicator dot */}
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full border-2 border-white" />
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-gray-900" />
                   </div>
                 </div>
 
                 {/* Counter - Large and Bold */}
-                <div className="text-5xl md:text-6xl font-bold mb-2 text-gray-900 tracking-tight">
+                <div className="text-5xl md:text-6xl font-bold mb-2 text-white tracking-tight">
                   <AnimatedCounter
                     value={stat.value}
                     suffix={stat.suffix}
@@ -164,12 +164,12 @@ const StatsShowcase = () => {
                 </div>
 
                 {/* Label */}
-                <h3 className="text-lg font-bold text-gray-900 mb-1">
+                <h3 className="text-lg font-bold text-white mb-1">
                   {stat.label}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500 font-medium">
+                <p className="text-sm text-gray-400 font-medium">
                   {stat.description}
                 </p>
               </div>
