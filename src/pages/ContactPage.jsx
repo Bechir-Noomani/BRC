@@ -4,8 +4,11 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    nom: '',
+    prenom: '',
+    secteur: '',
+    telephone: '',
+    adresse: '',
     message: ''
   });
 
@@ -13,10 +16,13 @@ const ContactPage = () => {
     e.preventDefault();
     
     // Create mailto link with form data
-    const subject = encodeURIComponent(`Contact depuis le site - ${formData.name}`);
+    const subject = encodeURIComponent(`Contact depuis le site - ${formData.nom} ${formData.prenom}`);
     const body = encodeURIComponent(
-      `Nom: ${formData.name}\n` +
-      `Email: ${formData.email}\n\n` +
+      `Nom: ${formData.nom}\n` +
+      `Prénom: ${formData.prenom}\n` +
+      `Secteur d'activité: ${formData.secteur}\n` +
+      `Numéro de téléphone: ${formData.telephone}\n` +
+      `Adresse: ${formData.adresse}\n\n` +
       `Message:\n${formData.message}`
     );
     
@@ -24,7 +30,7 @@ const ContactPage = () => {
     window.location.href = `mailto:contact@brocaramilou.tn?subject=${subject}&body=${body}`;
     
     // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ nom: '', prenom: '', secteur: '', telephone: '', adresse: '', message: '' });
   };
 
   const handleChange = (e) => {
@@ -93,20 +99,50 @@ const ContactPage = () => {
                 <motion.input
                   whileFocus={{ scale: 1.01 }}
                   type="text"
-                  name="name"
-                  value={formData.name}
+                  name="nom"
+                  value={formData.nom}
                   onChange={handleChange}
-                  placeholder="Nom complet"
+                  placeholder="Nom"
                   required
                   className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
                 />
                 <motion.input
                   whileFocus={{ scale: 1.01 }}
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  name="prenom"
+                  value={formData.prenom}
                   onChange={handleChange}
-                  placeholder="Email"
+                  placeholder="Prénom"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
+                />
+                <motion.input
+                  whileFocus={{ scale: 1.01 }}
+                  type="text"
+                  name="secteur"
+                  value={formData.secteur}
+                  onChange={handleChange}
+                  placeholder="Secteur d'activité"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
+                />
+                <motion.input
+                  whileFocus={{ scale: 1.01 }}
+                  type="tel"
+                  name="telephone"
+                  value={formData.telephone}
+                  onChange={handleChange}
+                  placeholder="Numéro de téléphone"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
+                />
+                <motion.input
+                  whileFocus={{ scale: 1.01 }}
+                  type="text"
+                  name="adresse"
+                  value={formData.adresse}
+                  onChange={handleChange}
+                  placeholder="Adresse"
                   required
                   className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
                 />
