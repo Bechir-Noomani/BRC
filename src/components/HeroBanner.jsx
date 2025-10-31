@@ -89,7 +89,7 @@ const HeroBanner = () => {
         {/* Dark Filter Overlay */}
         <motion.div 
           style={{ opacity }}
-          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" 
+          className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/70 to-black/90" 
         />
 
         {/* Professional Hero Content */}
