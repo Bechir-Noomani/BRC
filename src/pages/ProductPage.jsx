@@ -50,8 +50,7 @@ const ProductPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl shadow-xl overflow-hidden"
-            style={{ backgroundColor: 'rgb(1 1 1 / 86%)' }}
+            className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl shadow-xl overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
               {/* Product Image */}
