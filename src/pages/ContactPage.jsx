@@ -1,10 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact depuis le site - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Nom: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:contact@brocaramilou.tn?subject=${subject}&body=${body}`;
+    
+    // Reset form
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <div className="min-h-screen bg-transparent text-white pt-20">
+    <div className="min-h-screen bg-white text-gray-900 pt-20">
       <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -15,7 +46,7 @@ const ContactPage = () => {
             className="text-center mb-12"
           >
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">Contactez-nous</h1>
-            <p className="text-gray-400 text-lg">Notre équipe est à votre disposition pour répondre à vos questions</p>
+            <p className="text-gray-600 text-lg">Notre équipe est à votre disposition pour répondre à vos questions</p>
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
@@ -43,7 +74,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <div className="font-bold text-lg mb-1">{item.title}</div>
-                      <div className="text-gray-400">{item.content}</div>
+                      <div className="text-gray-600">{item.content}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -55,36 +86,49 @@ const ContactPage = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-800 p-8 rounded-2xl shadow-xl"
+              className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-8 rounded-2xl shadow-xl"
             >
               <h4 className="text-2xl font-bold mb-6">Envoyez-nous un message</h4>
-              <div className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <motion.input
                   whileFocus={{ scale: 1.01 }}
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Nom complet"
-                  className="w-full px-4 py-3.5 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
                 />
                 <motion.input
                   whileFocus={{ scale: 1.01 }}
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email"
-                  className="w-full px-4 py-3.5 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 transition-all"
                 />
                 <motion.textarea
                   whileFocus={{ scale: 1.01 }}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Votre message"
                   rows={5}
-                  className="w-full px-4 py-3.5 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 resize-none transition-all"
+                  required
+                  className="w-full px-4 py-3.5 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-white placeholder-gray-400 resize-none transition-all"
                 />
                 <motion.button 
+                  type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-red-600 text-white py-3.5 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg"
                 >
                   Envoyer
                 </motion.button>
-              </div>
+              </form>
             </motion.div>
           </div>
         </div>
