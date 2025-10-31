@@ -12,7 +12,7 @@ const ProductPage = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-transparent flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Produit non trouvé</h1>
           <Link to="/categories" className="text-red-600 hover:text-red-700">
@@ -24,8 +24,8 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-transparent pt-20">
-      <div className="bg-transparent py-8">
+    <div className="min-h-screen bg-white pt-20">
+      <div className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ x: -30, opacity: 0 }}
@@ -50,7 +50,8 @@ const ProductPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-xl overflow-hidden"
+            className="rounded-2xl shadow-xl overflow-hidden"
+            style={{ backgroundColor: 'rgb(1 1 1 / 86%)' }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
               {/* Product Image */}
@@ -78,17 +79,17 @@ const ProductPage = () => {
                   <div className="text-sm text-red-600 font-bold uppercase tracking-wide mb-2">
                     {product.brand}
                   </div>
-                  <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                  <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                     {product.name}
                   </h1>
-                  <div className="text-sm text-gray-500 mb-6">
+                  <div className="text-sm text-gray-300 mb-6">
                     Catégorie: {product.category}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Description</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg font-semibold text-white mb-3">Description</h3>
+                  <p className="text-gray-300 leading-relaxed">
                     {product.description}
                   </p>
                 </div>
