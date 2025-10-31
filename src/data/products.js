@@ -9,72 +9,82 @@ export const categories = [
         id: 'harissa',
         name: 'Harissa',
         products: [
-          { id: 1, name: 'Harissa Premium', brand: 'Le Phare du Cap Bon', image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop', description: 'Harissa traditionnelle tunisienne, pimentée et savoureuse, parfaite pour accompagner vos plats.' },
-          { id: 2, name: 'Harissa Extra Forte', brand: 'Le Phare du Cap Bon', image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop', description: 'Harissa extra forte pour les amateurs de piquant intense.' },
-          { id: 3, name: 'Harissa Douce', brand: 'Le Phare du Cap Bon', image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop', description: 'Harissa douce, parfaite pour ceux qui préfèrent un goût plus subtil.' },
+          { id: 1, name: 'Harissa Tharhira', brand: 'Tharhira', image: '/PRODOUI brc/Restoration/THARHIRA.png', description: 'Harissa traditionnelle tunisienne, pimentée et savoureuse, parfaite pour accompagner vos plats.' },
         ]
       },
       {
         id: 'thon',
         name: 'Thon',
         products: [
-          { id: 4, name: 'Thon en Conserve', brand: 'Sirena', image: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=500&h=500&fit=crop', description: 'Thon albacore en conserve, source de protéines de qualité.' },
-          { id: 5, name: 'Thon à l\'Huile', brand: 'Sirena', image: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=500&h=500&fit=crop', description: 'Thon à l\'huile d\'olive, plus savoureux et onctueux.' },
-          { id: 6, name: 'Thon Nature', brand: 'Sirena', image: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=500&h=500&fit=crop', description: 'Thon nature, sans ajout d\'huile, plus léger.' },
+          { id: 4, name: 'Thon El Bahar', brand: 'Thon El Bahar', image: '/PRODOUI brc/Restoration/THONE EL BAHAR.png', description: 'Thon de qualité supérieure, source de protéines de qualité.' },
+          { id: 5, name: 'Thon El Fakhama', brand: 'Thon El Fakhama', image: '/PRODOUI brc/Restoration/THONE EL FAKHAMA.png', description: 'Thon premium, savoureux et onctueux.' },
+          { id: 6, name: 'Thon Sidi Ali', brand: 'Sidi Ali', image: '/PRODOUI brc/Restoration/THONE SIDI ALI.png', description: 'Thon nature de qualité, goût authentique.' },
+          { id: 7, name: 'Thon Zad El Bahar', brand: 'Zad El Bahar', image: '/PRODOUI brc/Restoration/THONE ZAD EL BAHAR.png', description: 'Thon en conserve, parfait pour vos préparations.' },
         ]
       },
       {
         id: 'mozzarella',
         name: 'Mozzarella',
         products: [
-          { id: 7, name: 'Fromage Mozzarella', brand: 'La Vache Qui Rit', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Fromage mozzarella frais, idéal pour pizzas et salades.' },
-          { id: 8, name: 'Mozzarella di Bufala', brand: 'Galbani', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Mozzarella de bufflonne, qualité premium italienne.' },
-          { id: 9, name: 'Mozzarella Râpée', brand: 'La Vache Qui Rit', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Mozzarella pré-râpée, pratique pour vos préparations.' },
+          { id: 8, name: 'Bona Mozzarella', brand: 'Bona', image: '/PRODOUI brc/Restoration/BONA MOZARELA.png', description: 'Fromage mozzarella frais, idéal pour pizzas et salades.' },
+          { id: 9, name: 'Le Fondant Mozzarella', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/L FANDONT MOZARELA.png', description: 'Mozzarella de qualité premium, texture fondante.' },
+          { id: 10, name: 'Mozzarella Arbi', brand: 'Arbi', image: '/PRODOUI brc/Restoration/MOZARELA ARBI.png', description: 'Mozzarella traditionnelle, goût authentique.' },
+          { id: 11, name: 'Mozza Pizza', brand: 'Mozza Pizza', image: '/PRODOUI brc/Restoration/MOZZA PIZZA.png', description: 'Mozzarella spéciale pizza, fonte parfaite.' },
         ]
       },
       {
         id: 'mayonnaise',
         name: 'Mayonnaise',
         products: [
-          { id: 10, name: 'Mayonnaise', brand: 'Amora', image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=500&fit=crop', description: 'Mayonnaise crémeuse et onctueuse, parfaite pour sandwiches.' },
-          { id: 11, name: 'Mayonnaise Allégée', brand: 'Amora', image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=500&fit=crop', description: 'Mayonnaise allégée, moins de calories, même goût.' },
-          { id: 12, name: 'Mayonnaise aux Herbes', brand: 'Amora', image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&h=500&fit=crop', description: 'Mayonnaise aux herbes fraîches, goût raffiné.' },
+          { id: 12, name: 'Bonna Mayonnaise', brand: 'Bonna', image: '/PRODOUI brc/Restoration/BONNA MAYOUNESE.png', description: 'Mayonnaise crémeuse et onctueuse, parfaite pour sandwiches.' },
+          { id: 13, name: 'Mayolite', brand: 'Mayolite', image: '/PRODOUI brc/Restoration/MAYOLITE.png', description: 'Mayonnaise allégée, moins de calories, même goût.' },
+          { id: 14, name: 'Mayolla', brand: 'Mayolla', image: '/PRODOUI brc/Restoration/MAYOLLA.png', description: 'Mayonnaise de qualité, goût raffiné.' },
         ]
       },
       {
         id: 'salade-grilles',
         name: 'Salade Grillés',
         products: [
-          { id: 13, name: 'Salade de Légumes Grillés', brand: 'Bonduelle', image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop', description: 'Mélange de légumes grillés, prêt à consommer.' },
-          { id: 14, name: 'Aubergines Grillées', brand: 'Bonduelle', image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop', description: 'Aubergines grillées, parfaites pour vos salades.' },
-          { id: 15, name: 'Poivrons Grillés', brand: 'Bonduelle', image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop', description: 'Poivrons grillés, goût fumé authentique.' },
+          { id: 15, name: 'Salade Algérienne', brand: 'Sauca Algérienne', image: '/PRODOUI brc/Restoration/SAUCA ALGERIENNE.png', description: 'Salade algérienne traditionnelle, prête à consommer.' },
+          { id: 16, name: 'Edame', brand: 'Edame', image: '/PRODOUI brc/Restoration/EDAME.png', description: 'Edamame de qualité, parfait pour vos salades.' },
         ]
       },
       {
         id: 'sauces',
         name: 'Sauces',
         products: [
-          { id: 16, name: 'Sauce Tomate', brand: 'Mutti', image: 'https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&h=500&fit=crop', description: 'Sauce tomate naturelle, sans conservateurs.' },
-          { id: 17, name: 'Sauce Barbecue', brand: 'Heinz', image: 'https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&h=500&fit=crop', description: 'Sauce barbecue, goût fumé et sucré.' },
-          { id: 18, name: 'Sauce Béarnaise', brand: 'Knorr', image: 'https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&h=500&fit=crop', description: 'Sauce béarnaise, parfaite pour vos viandes.' },
+          { id: 17, name: 'Sauce Pizza', brand: 'Sauce Pizza', image: '/PRODOUI brc/Restoration/SAUCE PIZZA.png', description: 'Sauce tomate spéciale pizza, goût authentique.' },
+          { id: 18, name: 'Sauce Barbecue', brand: 'Sauce Barbacio', image: '/PRODOUI brc/Restoration/SAUCE BARBACIO.png', description: 'Sauce barbecue, goût fumé et sucré.' },
+          { id: 19, name: 'Sauce à l\'Ail', brand: 'Sauce à l\'Ail', image: '/PRODOUI brc/Restoration/SAUCE A LAIL.png', description: 'Sauce à l\'ail crémeuse, parfaite pour vos plats.' },
+          { id: 20, name: 'Sauce Cheese', brand: 'Sauce Cheese', image: '/PRODOUI brc/Restoration/SAUCE SHEESE.png', description: 'Sauce fromagère onctueuse, idéale pour nachos et burgers.' },
+          { id: 21, name: 'Sauce Fruité', brand: 'Sauce Frute', image: '/PRODOUI brc/Restoration/SAUCE FRUTE.png', description: 'Sauce fruitée sucrée-salée, accompagnement original.' },
+          { id: 22, name: 'Ketchup', brand: 'Khatchap', image: '/PRODOUI brc/Restoration/KHATCHAP.png', description: 'Ketchup de qualité, goût tomate authentique.' },
+          { id: 23, name: 'Dolla Sauce', brand: 'Dolla', image: '/PRODOUI brc/Restoration/DOLLA SAUCE.png', description: 'Sauce spéciale, goût unique et savoureux.' },
         ]
       },
       {
         id: 'charcuteries',
         name: 'Charcuteries',
         products: [
-          { id: 19, name: 'Jambon de Parme', brand: 'Prosciutto di Parma', image: 'https://images.unsplash.com/photo-1588347818062-4e7c8f2b0c9a?w=500&h=500&fit=crop', description: 'Jambon de Parme AOP, qualité italienne premium.' },
-          { id: 20, name: 'Saucisson Sec', brand: 'Rosette de Lyon', image: 'https://images.unsplash.com/photo-1588347818062-4e7c8f2b0c9a?w=500&h=500&fit=crop', description: 'Saucisson sec traditionnel, goût authentique.' },
-          { id: 21, name: 'Chorizo Espagnol', brand: 'El Pozo', image: 'https://images.unsplash.com/photo-1588347818062-4e7c8f2b0c9a?w=500&h=500&fit=crop', description: 'Chorizo espagnol, épicé et savoureux.' },
+          { id: 24, name: 'Jambon', brand: 'Jambon', image: '/PRODOUI brc/Restoration/JAMBON.png', description: 'Jambon de qualité supérieure, parfait pour sandwiches et pizzas.' },
+          { id: 25, name: 'Salami', brand: 'Salami', image: '/PRODOUI brc/Restoration/SALAMI.png', description: 'Salami traditionnel, goût authentique et savoureux.' },
         ]
       },
       {
         id: 'fromages',
         name: 'Fromages',
         products: [
-          { id: 22, name: 'Fromage de Chèvre', brand: 'Caprice des Dieux', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Fromage de chèvre crémeux, goût délicat.' },
-          { id: 23, name: 'Camembert', brand: 'Président', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Camembert français, pâte molle à croûte fleurie.' },
-          { id: 24, name: 'Emmental', brand: 'Président', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&h=500&fit=crop', description: 'Emmental suisse, fromage à pâte dure.' },
+          { id: 26, name: 'Fromage Râpé Gruyère', brand: 'Formage Rape Grue', image: '/PRODOUI brc/Restoration/FORMAGE RAPE GRUE.png', description: 'Fromage gruyère râpé, parfait pour gratins et pizzas.' },
+          { id: 27, name: 'Gouda', brand: 'Gouda', image: '/PRODOUI brc/Restoration/GOUDA.png', description: 'Fromage Gouda de qualité, goût doux et crémeux.' },
+          { id: 28, name: 'Landore Râpé', brand: 'Landore', image: '/PRODOUI brc/Restoration/LANDORE RAPE.png', description: 'Fromage râpé Landore, pratique pour vos préparations.' },
+          { id: 29, name: 'Le Fondant Râpé', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/LE FONDANTE RAPE.png', description: 'Fromage râpé Le Fondant, fonte parfaite.' },
+          { id: 30, name: 'Slice Le Fondant', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/SLICE LE FONDANTE.png', description: 'Fromage en tranches Le Fondant, idéal pour burgers.' },
+          { id: 31, name: 'Slice Campo', brand: 'Campo', image: '/PRODOUI brc/Restoration/SLACE CAMPO.png', description: 'Fromage en tranches Campo, parfait pour sandwiches.' },
+          { id: 32, name: 'Mon Régal', brand: 'Mon Régal', image: '/PRODOUI brc/Restoration/MON REGAL.png', description: 'Fromage Mon Régal, saveur délicate et raffinée.' },
+          { id: 33, name: 'Madame Kamoun', brand: 'Madame Kamoun', image: '/PRODOUI brc/Restoration/MADAME KAMOUN.png', description: 'Fromage Madame Kamoun, qualité artisanale.' },
+          { id: 34, name: 'Dorela', brand: 'Dorela', image: '/PRODOUI brc/Restoration/DORELA.png', description: 'Fromage Dorela, goût authentique et crémeux.' },
+          { id: 35, name: 'Sahlia', brand: 'Sahlia', image: '/PRODOUI brc/Restoration/SAHLIA.png', description: 'Fromage Sahlia, texture onctueuse et savoureuse.' },
+          { id: 36, name: 'Spécial', brand: 'Spésial', image: '/PRODOUI brc/Restoration/SPESIAL.png', description: 'Fromage spécial, mélange unique de saveurs.' },
         ]
       }
     ]
