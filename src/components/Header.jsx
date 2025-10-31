@@ -150,8 +150,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md" role="banner">
-        <div className="border-b border-gray-200/50" />
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-gray-900 via-gray-800 to-black backdrop-blur-md shadow-md" role="banner">
+        <div className="border-b border-gray-700/50" />
 
         <nav className="relative" role="navigation" aria-label="Navigation principale">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,8 +169,8 @@ const Header = () => {
                   loading="eager"
                 />
                 <div className="hidden sm:block">
-                  <div className="text-gray-900 font-bold text-2xl tracking-tight">Brocaramilou</div>
-                  <div className="text-gray-600 text-sm font-medium">Fournitures de pâtisserie et restauration</div>
+                  <div className="text-white font-bold text-2xl tracking-tight">Brocaramilou</div>
+                  <div className="text-gray-300 text-sm font-medium">Fournitures de pâtisserie et restauration</div>
                 </div>
               </a>
 
@@ -180,7 +180,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-700 hover:text-red-600 transition-colors font-semibold text-base focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-2 py-1"
+                    className="text-gray-200 hover:text-red-500 transition-colors font-semibold text-base focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-2 py-1"
                     role="menuitem"
                   >
                     {item.name}
@@ -208,14 +208,14 @@ const Header = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setSearchFocused(true)}
-                    className="w-full pl-4 pr-10 py-2.5 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition-all"
+                    className="w-full pl-4 pr-10 py-2.5 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition-all"
                     aria-autocomplete="list"
                     aria-controls="search-results"
                     aria-expanded={searchFocused && searchResults.length > 0}
                   />
                   <button 
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-600 hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gray-300 hover:text-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded"
                     aria-label="Lancer la recherche"
                   >
                     <Search className="w-4 h-4" />
@@ -274,7 +274,7 @@ const Header = () => {
               <div className="lg:hidden flex items-center gap-2">
                 <button
                   onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
-                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
+                  className="relative z-50 p-2 text-gray-200 hover:bg-gray-700 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
                   aria-label={mobileSearchOpen ? "Fermer la recherche" : "Ouvrir la recherche"}
                   aria-expanded={mobileSearchOpen}
                   aria-controls="mobile-search"
@@ -283,7 +283,7 @@ const Header = () => {
                 </button>
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="relative z-50 p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
+                  className="relative z-50 p-2 text-gray-200 hover:bg-gray-700 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-red-600"
                   aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
                   aria-expanded={menuOpen}
                   aria-controls="mobile-menu"
@@ -311,7 +311,7 @@ const Header = () => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed top-20 left-0 right-0 z-40 bg-white shadow-lg lg:hidden overflow-hidden"
+              className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg lg:hidden overflow-hidden"
               role="search"
               aria-label="Recherche mobile"
             >
@@ -326,7 +326,7 @@ const Header = () => {
                   placeholder="Rechercher des produits..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-4 pr-10 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm"
+                  className="w-full pl-4 pr-10 py-3 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm"
                   autoFocus
                   aria-autocomplete="list"
                   aria-controls="mobile-search-results"
@@ -344,7 +344,7 @@ const Header = () => {
               {searchResults.length > 0 && (
                 <div 
                   id="mobile-search-results"
-                  className="mt-3 bg-white rounded-lg border border-gray-200 max-h-80 overflow-y-auto"
+                  className="mt-3 bg-gray-800 rounded-lg border border-gray-700 max-h-80 overflow-y-auto"
                   role="listbox"
                   aria-label="Résultats de recherche mobile"
                 >
@@ -352,7 +352,7 @@ const Header = () => {
                     <a
                       key={product.id}
                       href={`/product/${product.id}`}
-                      className="flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 focus:outline-none focus:bg-gray-50"
+                      className="flex items-center gap-3 p-3 hover:bg-gray-700 transition-colors border-b border-gray-700 last:border-b-0 focus:outline-none focus:bg-gray-700"
                       onClick={() => {
                         setMobileSearchOpen(false);
                         setSearchQuery('');
@@ -366,14 +366,14 @@ const Header = () => {
                         loading="lazy"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-sm text-gray-900 truncate">
+                        <p className="font-semibold text-sm text-white truncate">
                           {product.name}
                         </p>
-                        <p className="text-xs text-gray-500 truncate">
+                        <p className="text-xs text-gray-400 truncate">
                           {product.brand}
                         </p>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                      <ChevronRight className="w-4 h-4 text-gray-500" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
@@ -399,7 +399,7 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white/95 backdrop-blur-lg shadow-2xl z-50 lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-gradient-to-br from-gray-900 via-gray-800 to-black backdrop-blur-lg shadow-2xl z-50 lg:hidden overflow-y-auto"
               role="dialog"
               aria-label="Menu de navigation mobile"
               aria-modal="true"
@@ -420,7 +420,7 @@ const Header = () => {
                       href={item.href}
                       variants={navItem}
                       onClick={() => setMenuOpen(false)}
-                      className="group flex items-center justify-between px-4 py-4 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-600"
+                      className="group flex items-center justify-between px-4 py-4 text-gray-200 hover:text-red-500 hover:bg-gray-800 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-600"
                       role="menuitem"
                     >
                       <span className="font-medium text-lg">{item.name}</span>
@@ -433,7 +433,7 @@ const Header = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="mt-12 pt-8 border-t border-gray-200"
+                  className="mt-12 pt-8 border-t border-gray-700"
                 >
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-4">
@@ -444,10 +444,10 @@ const Header = () => {
                         loading="lazy"
                       />
                     </div>
-                    <h3 className="font-bold text-gray-900 text-lg">Brocaramilou</h3>
-                    <p className="text-gray-500 text-sm mt-1">Fournitures professionnelles</p>
+                    <h3 className="font-bold text-white text-lg">Brocaramilou</h3>
+                    <p className="text-gray-400 text-sm mt-1">Fournitures professionnelles</p>
                     
-                    <address className="mt-6 space-y-2 text-sm text-gray-600 not-italic">
+                    <address className="mt-6 space-y-2 text-sm text-gray-300 not-italic">
                       <div className="flex items-center justify-center gap-2">
                         <Phone className="w-4 h-4" aria-hidden="true" />
                         <a href="tel:+216XXXXXXXX" className="hover:text-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-600 rounded px-1">

@@ -316,9 +316,9 @@ const CategoryPage = () => {
                         className="group"
                       >
                         <Link to={`/category/${categoryId}/subcategory/${subcategory.id}`}>
-                          <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full">
+                          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full">
                             {/* Image Section */}
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-white">
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <motion.div
                                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -341,16 +341,16 @@ const CategoryPage = () => {
                             
                             {/* Content Section */}
                             <div className="p-6">
-                              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-500 transition-colors">
                                 {subcategory.name}
                               </h3>
-                              <p className="text-gray-500 text-sm mb-4">
+                              <p className="text-gray-300 text-sm mb-4">
                                 Explorez {subcategory.products.length} produits de qualité
                               </p>
                               
                               <div className="flex items-center justify-between">
                                 <span className="text-sm font-medium text-gray-400">Voir la collection</span>
-                                <ChevronRight className="w-5 h-5 text-red-600 group-hover:translate-x-1 transition-transform" />
+                                <ChevronRight className="w-5 h-5 text-red-500 group-hover:translate-x-1 transition-transform" />
                               </div>
                             </div>
                           </div>

@@ -14,7 +14,7 @@ const SubcategoryPage = () => {
 
   if (!category || !subcategory) {
     return (
-      <div className="min-h-screen bg-transparent flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Sous-catégorie non trouvée</h1>
           <Link to="/categories" className="text-red-600 hover:text-red-700">
@@ -26,8 +26,8 @@ const SubcategoryPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-transparent pt-20">
-      <div className="bg-transparent py-8">
+    <div className="min-h-screen bg-white pt-20">
+      <div className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ x: -30, opacity: 0 }}

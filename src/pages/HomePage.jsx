@@ -11,7 +11,7 @@ const HomePage = () => {
   const { categories } = useApp();
 
   return (
-    <div className="min-h-screen bg-transparent pt-20">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Banner */}
       <HeroBanner />
 

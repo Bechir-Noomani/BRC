@@ -222,7 +222,7 @@ const HeroBanner = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               variants={containerVariants}
-              className="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8 sm:p-12 lg:p-16 rounded-2xl shadow-2xl"
+              className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-8 sm:p-12 lg:p-16 rounded-2xl shadow-2xl"
             >
               {/* Brand Tag */}
               <motion.div variants={itemVariants} className="mb-6">
