@@ -100,10 +100,10 @@ const StatsShowcase = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center gap-2 bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700 px-4 py-2 rounded-full mb-6"
           >
-            <TrendingUp className="w-4 h-4 text-red-600" />
-            <span className="text-sm font-semibold text-red-600 uppercase tracking-wider">Performance</span>
+            <TrendingUp className="w-4 h-4 text-red-500" />
+            <span className="text-sm font-semibold text-white uppercase tracking-wider">Performance</span>
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
