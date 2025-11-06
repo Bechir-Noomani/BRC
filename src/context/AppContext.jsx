@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo, useCallback } from 'react';
 import { categories, getCategoryById, getSubcategoryById, getProductById, getAllProducts, getProductsByCategory, getProductsBySubcategory } from '../data/products';
 
 const AppContext = createContext();
@@ -17,8 +17,8 @@ function AppProvider({ children }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Get filtered products based on search query
-  const getFilteredProducts = () => {
+  // Get filtered products based on search query - memoized
+  const getFilteredProducts = useCallback(() => {
     if (!searchQuery.trim()) {
       return getAllProducts();
     }
@@ -28,9 +28,10 @@ function AppProvider({ children }) {
       product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (product.subcategoryName && product.subcategoryName.toLowerCase().includes(searchQuery.toLowerCase()))
     );
-  };
+  }, [searchQuery]);
 
-  const value = {
+  // Memoize the context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({
     // Data
     categories,
     
@@ -52,7 +53,13 @@ function AppProvider({ children }) {
     getFilteredProducts,
     getProductsByCategory,
     getProductsBySubcategory,
-  };
+  }), [
+    selectedCategory,
+    selectedSubcategory,
+    selectedProduct,
+    searchQuery,
+    getFilteredProducts
+  ]);
 
   return (
     <AppContext.Provider value={value}>

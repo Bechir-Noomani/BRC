@@ -151,6 +151,26 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-gray-900 via-gray-800 to-black backdrop-blur-md shadow-md" role="banner">
+           {/* Top Bar */}
+      <div className="bg-white text-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-10 text-sm">
+            <div className="flex items-center gap-6">
+              <a href="tel:+33123456789" className="flex items-center gap-2 hover:text-red-600 transition-colors">
+                <Phone className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">+33 1 23 45 67 89</span>
+              </a>
+              <a href="mailto:contact@example.com" className="flex items-center gap-2 hover:text-red-600 transition-colors">
+                <Mail className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">contact@example.com</span>
+              </a>
+            </div>
+            <div className="text-xs font-medium">
+              Livraison gratuite à partir de 100 TND
+            </div>
+          </div>
+        </div>
+      </div>
         <div className="border-b border-gray-700/50" />
 
         <nav className="relative" role="navigation" aria-label="Navigation principale">
@@ -311,7 +331,7 @@ const Header = () => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg lg:hidden overflow-hidden"
+              className="fixed top-[120px] left-0 right-0 z-40 bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-lg lg:hidden overflow-hidden"
               role="search"
               aria-label="Recherche mobile"
             >
@@ -472,4 +492,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

@@ -128,7 +128,7 @@ const HeroBanner = () => {
             <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-100 mb-2">
               Fournitures Professionnelles
             </p>
-            <p className="text-lg sm:text-xl md:text-2xl font-medium text-red-400">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-red-500">
               Pâtisserie • Restauration • Café
             </p>
           </motion.div>

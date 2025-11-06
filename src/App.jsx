@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
+import { Toaster } from './components/ui/toaster';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -12,6 +13,7 @@ import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SearchPage from './pages/SearchPage';
+import NotFound from './pages/NotFound';
 
 function App() {
   // ==========================================
@@ -28,6 +30,7 @@ function App() {
 
   return (
     <AppProvider>
+      <Toaster />
       <Router>
         <ScrollToTop />
         <div className="min-h-screen" style={globalBackground}>
@@ -42,6 +45,8 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/search" element={<SearchPage />} />
+              {/* Catch-all route for 404 pages */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />

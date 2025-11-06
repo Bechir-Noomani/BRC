@@ -2,7 +2,8 @@ export const categories = [
   {
     id: 'restauration',
     name: 'Restauration',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop',
+    image: '/category-restaurant.jpg',
+    description: 'Solutions professionnelles pour restaurants : équipements de cuisine, ustensiles, et matériel de service haut de gamme.',
     hasSubcategories: true,
     subcategories: [
       {
@@ -92,7 +93,8 @@ export const categories = [
   {
     id: 'patisseries',
     name: 'Pâtisseries',
-    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&h=600&fit=crop',
+    image: '/category-bakery.jpg',
+    description: 'Équipement complet pour pâtissiers professionnels : moules, ustensiles, robots, et ingrédients de qualité supérieure.',
     hasSubcategories: true,
     subcategories: [
       {
@@ -208,7 +210,8 @@ export const categories = [
   {
     id: 'cafe',
     name: 'Café',
-    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=600&fit=crop',
+    image: '/category-cafe.jpg',
+    description: 'Tout l\'équipement nécessaire pour cafés et bars : machines à café, moulins, accessoires pour baristas professionnels.',
     hasSubcategories: true,
     subcategories: [
       {
@@ -282,7 +285,8 @@ export const categories = [
   {
     id: 'nettoyage',
     name: 'Nettoyage',
-    image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&h=600&fit=crop',
+    image: '/category-nettoyage.jpg',
+    description: 'Produits et équipements de nettoyage professionnels pour maintenir vos locaux impeccables.',
     hasSubcategories: true,
     subcategories: [
       {
@@ -326,7 +330,8 @@ export const categories = [
   {
     id: 'cereales',
     name: 'Céréales',
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=600&fit=crop',
+    image: '/category-Céreales.jpg',
+    description: 'Large sélection de céréales et produits alimentaires de base pour vos besoins professionnels.',
     hasSubcategories: false,
     products: [
       { id: 97, name: 'Riz Basmati', brand: 'Tilda', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&h=500&fit=crop', description: 'Riz basmati premium, grains longs et parfumés, cuisson parfaite.' },
@@ -342,7 +347,8 @@ export const categories = [
   {
     id: 'emballage',
     name: 'Emballage',
-    image: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&h=600&fit=crop',
+    image: '/category-packaging.jpg',
+    description: 'Large gamme d\'emballages alimentaires professionnels : contenants, sacs, boîtes pour tous vos besoins de conditionnement.',
     hasSubcategories: false,
     products: [
       { id: 105, name: 'Sacs Papier Kraft', brand: 'EcoPack', image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=500&fit=crop', description: 'Sacs en papier kraft recyclable, résistants, parfaits pour vente à emporter.' },
