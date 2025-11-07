@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Grid3x3, List, ChevronRight, ChevronDown, Package, Filter, SortAsc } from 'lucide-react';
+import { ArrowLeft, Grid3x3, List, ChevronRight, ChevronDown, Package, Filter, SortAsc, Sparkles } from 'lucide-react';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
 import { useApp } from '../context/AppContext';
@@ -43,7 +43,7 @@ const CategoryPage = () => {
 
   if (!category) {
     return (
-      <div className="min-h-screen bg-transparent flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Catégorie non trouvée</h1>
           <Link to="/categories" className="text-red-600 hover:text-red-700">
@@ -55,7 +55,7 @@ const CategoryPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-30">
       {/* Hero Section with Category Image */}
       <div className="relative h-72 overflow-hidden">
         <motion.div 
@@ -103,53 +103,27 @@ const CategoryPage = () => {
         </div>
       </div>
 
-      {/* Stats Bar */}
+      {/* Back Button Bar */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         className="bg-white border-b border-gray-200 shadow-sm"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                  <Package className="w-6 h-6 text-red-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">{stats.total}</div>
-                  <div className="text-sm text-gray-500">Produits disponibles</div>
-                </div>
-              </div>
-              
-              {category.hasSubcategories && (
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Grid3x3 className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">{stats.subcategories}</div>
-                    <div className="text-sm text-gray-500">Sous-catégories</div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <Link 
-              to="/categories"
-              className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-medium">Retour</span>
-            </Link>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Link 
+            to="/categories"
+            className="inline-flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span className="font-medium">Retour</span>
+          </Link>
         </div>
       </motion.div>
 
       {/* Mobile Sticky Filter Dropdown - Only show for categories with subcategories */}
       {category.hasSubcategories && (
-        <div className="lg:hidden sticky top-20 z-30 bg-white border-b border-gray-200 shadow-md">
+        <div className="lg:hidden sticky top-30 z-30 bg-white border-b border-gray-200 shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <button
               onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
@@ -244,7 +218,7 @@ const CategoryPage = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="hidden lg:block lg:w-72 flex-shrink-0"
             >
-              <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+              <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-32">
                 <div className="flex items-center gap-2 mb-6">
                   <Filter className="w-5 h-5 text-red-600" />
                   <h3 className="text-lg font-bold text-gray-900">Sous-catégories</h3>
@@ -305,52 +279,48 @@ const CategoryPage = () => {
                 transition={{ duration: 0.4 }}
               >
                 {category.hasSubcategories ? (
-                  // Show subcategories as enhanced cards
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  // Show subcategories as enhanced cards - Proto2 Style
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {displayItems.map((subcategory, idx) => (
                       <motion.div
                         key={subcategory.id}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05, duration: 0.3 }}
-                        className="group"
+                        whileHover={{ y: -8 }}
                       >
                         <Link to={`/category/${categoryId}/subcategory/${subcategory.id}`}>
-                          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full">
-                            {/* Image Section */}
-                            <div className="relative aspect-[4/3] overflow-hidden bg-white">
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <motion.div
-                                  whileHover={{ scale: 1.1, rotate: 5 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="text-center"
-                                >
-                                  <div className="text-6xl mb-3 filter drop-shadow-lg">📦</div>
-                                  <div className="inline-block px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg">
-                                    <span className="text-sm font-bold text-red-600">
-                                      {subcategory.products.length} Produits
-                                    </span>
-                                  </div>
-                                </motion.div>
-                              </div>
+                          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-500">
+                            {/* Image Section - Placeholder */}
+                            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                              <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.3 }}
+                                className="absolute inset-0 flex items-center justify-center"
+                              >
+                                <div className="text-center">
+                                  <Package className="w-20 h-20 text-gray-400 mx-auto mb-3" />
+                                  <p className="text-sm font-medium text-gray-500">Image à venir</p>
+                                </div>
+                              </motion.div>
                               
                               {/* Decorative Elements */}
-                              <div className="absolute top-4 right-4 w-20 h-20 bg-red-200/30 rounded-full blur-2xl" />
-                              <div className="absolute bottom-4 left-4 w-24 h-24 bg-orange-200/30 rounded-full blur-2xl" />
+                              <div className="absolute top-4 right-4 w-24 h-24 bg-red-500/10 rounded-full blur-3xl" />
+                              <div className="absolute bottom-4 left-4 w-32 h-32 bg-gray-400/10 rounded-full blur-3xl" />
                             </div>
                             
                             {/* Content Section */}
-                            <div className="p-6">
-                              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-500 transition-colors">
+                            <div className="p-8">
+                              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-red-500 transition-colors">
                                 {subcategory.name}
                               </h3>
-                              <p className="text-gray-300 text-sm mb-4">
+                              <p className="text-white/80 text-sm mb-6 leading-relaxed">
                                 Explorez {subcategory.products.length} produits de qualité
                               </p>
                               
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-gray-400">Voir la collection</span>
-                                <ChevronRight className="w-5 h-5 text-red-500 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-sm font-semibold text-white/70">Voir la collection</span>
+                                <ChevronRight className="w-6 h-6 text-red-500" />
                               </div>
                             </div>
                           </div>
@@ -360,7 +330,7 @@ const CategoryPage = () => {
                   </div>
                 ) : (
                   // Show products directly for flat categories
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {category.products.map((product, idx) => (
                       <ProductCard key={product.id} product={product} index={idx} />
                     ))}

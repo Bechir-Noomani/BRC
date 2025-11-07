@@ -1,44 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronRight, Package } from 'lucide-react';
 
 const ProductCard = ({ product, index = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      className="group bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 w-full max-w-sm"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
+      whileHover={{ y: -8 }}
     >
-      <div className="aspect-square overflow-hidden bg-white">
-        <motion.img
-          whileHover={{ scale: 1.15 }}
-          transition={{ duration: 0.6 }}
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="p-5">
-        <div className="text-xs text-red-500 font-bold mb-2 uppercase tracking-wide">{product.brand}</div>
-        <h4 className="text-white font-bold mb-1 line-clamp-2 text-base">
-          {product.name}
-        </h4>
-        {product.subcategoryName && (
-          <p className="text-xs text-gray-400 mb-1">{product.subcategoryName}</p>
-        )}
-        <p className="text-sm text-gray-300 mb-4">{product.categoryName}</p>
-        <Link to={`/product/${product.id}`}>
-          <motion.button 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full bg-red-600 text-white py-2.5 rounded-lg font-medium hover:bg-red-700 transition-colors"
-          >
-            Voir Détails
-          </motion.button>
-        </Link>
-      </div>
+      <Link to={`/product/${product.id}`}>
+        <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-600">
+          {/* Image Container */}
+          <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            
+            {/* Floating badge - Only show if brand exists */}
+            {product.brand && (
+              <div className="absolute top-4 right-4 px-3 py-1.5 bg-red-600 text-white rounded-full text-xs font-bold shadow-lg">
+                {product.brand}
+              </div>
+            )}
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
+              {product.name}
+            </h3>
+            
+            <div className="flex items-center justify-between pt-4 border-t-2 border-gray-200">
+              <span className="text-sm font-semibold text-gray-600 flex items-center gap-2">
+                <Package className="w-4 h-4" />
+                Voir détails
+              </span>
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                <ChevronRight className="w-5 h-5 text-red-600" />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </Link>
     </motion.div>
   );
 };

@@ -102,21 +102,26 @@ const HeroBanner = () => {
             className="inline-block mb-6"
           >
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-lg">
-              <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-200">Depuis 1995</span>
+              <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-200">Depuis 2009</span>
               <span className="w-1 h-1 rounded-full bg-red-500" />
               <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-gray-200">Tunisie</span>
             </div>
           </motion.div>
 
-          {/* Main Title - Clean & Professional */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight"
-          >
-            BROCARAMILOU
-          </motion.h1>
+          {/* Main Logo - Clean & Professional */}
+         <motion.div 
+                     initial={{ opacity: 0, y: 30 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                     className="mb-6 flex justify-center"
+                   >
+                     <img 
+                       src="/logo/herologo.png" 
+                       alt="BROCARAMILOU" 
+                       className="h-24 sm:h-28 md:h-32 lg:h-40 w-auto object-contain"
+                     />
+                   </motion.div>
+         
 
           {/* Subtitle - Refined Typography */}
           <motion.div
@@ -125,9 +130,7 @@ const HeroBanner = () => {
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             className="mb-6"
           >
-            <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-100 mb-2">
-              Fournitures Professionnelles
-            </p>
+           
             <p className="text-lg sm:text-xl md:text-2xl font-medium text-red-500">
               Pâtisserie • Restauration • Café
             </p>

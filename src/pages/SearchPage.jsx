@@ -12,7 +12,7 @@ const SearchPage = () => {
   const products = getFilteredProducts();
 
   return (
-    <div className="min-h-screen bg-transparent pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-30">
       <div className="bg-transparent py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 

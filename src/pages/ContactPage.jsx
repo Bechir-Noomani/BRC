@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 pt-30">
       
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 sm:py-20 overflow-hidden border-b border-gray-800">
