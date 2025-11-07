@@ -292,39 +292,38 @@ export const categories = [
       {
         id: 'desodorisant-sol',
         name: 'Désodorisant du Sol',
+        image: '/products/Nettoyage/desodorisant-sol-logo.jpg',
         products: [
-          { id: 85, name: 'Désodorisant Sol Pin', brand: 'Mr. Propre', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Désodorisant sol parfum pin, fraîcheur longue durée.' },
-          { id: 86, name: 'Désodorisant Sol Citron', brand: 'Mr. Propre', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Désodorisant sol parfum citron, désinfectant naturel.' },
-          { id: 87, name: 'Désodorisant Sol Lavande', brand: 'Mr. Propre', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Désodorisant sol parfum lavande, apaisant et relaxant.' },
+          { id: 85, name: 'El Basatine 5L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-El basatine 5L Jmal.png', description: 'Désodorisant sol El Basatine 5L, fraîcheur longue durée pour tous types de sols.' },
+          { id: 86, name: 'Fawah 3L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-fawah 3L Jmal.png', description: 'Désodorisant sol Fawah 3L, parfum agréable et efficacité durable.' },
+          { id: 87, name: 'Fawah 5L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-fawah 5L Jmal.png', description: 'Désodorisant sol Fawah 5L, format économique pour usage professionnel.' },
         ]
       },
       {
         id: 'liquide-linge',
         name: 'Liquide Linge',
+        image: '/products/Nettoyage/liquide-linge-logo.jpg',
         products: [
-          { id: 88, name: 'Liquide Linge Ariel', brand: 'Ariel', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Lessive liquide haute performance, nettoie en profondeur.' },
-          { id: 89, name: 'Liquide Linge Skip', brand: 'Skip', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Lessive liquide, élimine les taches tenaces.' },
-          { id: 90, name: 'Liquide Linge Bio', brand: 'Ecover', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Lessive liquide bio, respectueuse de l\'environnement.' },
+          { id: 88, name: 'Finesse 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finesse 1L Jmal.png', description: 'Lessive liquide Finesse 1L, nettoyage en profondeur et fraîcheur intense.' },
+          { id: 89, name: 'Finesse 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finesse 3L Jmal.png', description: 'Lessive liquide Finesse 3L, élimine les taches tenaces efficacement.' },
+          { id: 90, name: 'Finesse 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finnesse 5L Jmal.png', description: 'Lessive liquide Finesse 5L, format économique pour professionnels.' },
+          { id: 128, name: 'Ghassel 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-ghassel 3L Jmal.png', description: 'Lessive liquide Ghassel 3L, performance optimale et parfum durable.' },
         ]
       },
       {
         id: 'liquide-vaisselle',
         name: 'Liquide Vaisselle',
+        image: '/products/Nettoyage/liquide-vaisselle-logo.jpg',
         products: [
-          { id: 91, name: 'Liquide Vaisselle Fairy', brand: 'Fairy', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Liquide vaisselle, dégraisse efficacement.' },
-          { id: 92, name: 'Liquide Vaisselle Sun', brand: 'Sun', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Liquide vaisselle, mousse abondante et durable.' },
-          { id: 93, name: 'Liquide Vaisselle Bio', brand: 'Ecover', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Liquide vaisselle bio, respectueux de l\'environnement.' },
+          { id: 91, name: 'Alys Pomme 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys 1L pomme Jmal.png', description: 'Liquide vaisselle Alys parfum pomme 1L, dégraisse efficacement.' },
+          { id: 92, name: 'Alys Pomme 2L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-Alys-Pomme_2L_Jmal_.png', description: 'Liquide vaisselle Alys parfum pomme 2L, mousse abondante et durable.' },
+          { id: 93, name: 'Alys Citron 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys citron 1L Jmal.png', description: 'Liquide vaisselle Alys parfum citron 1L, fraîcheur et efficacité.' },
+          { id: 129, name: 'Alys Citron 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys 3L citron Jmal.png', description: 'Liquide vaisselle Alys parfum citron 3L, dégraissant puissant.' },
+          { id: 130, name: 'Alyse Citron 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alyse 5L citron Jmal.png', description: 'Liquide vaisselle Alyse parfum citron 5L, format professionnel économique.' },
+          { id: 131, name: 'Alyse Pomme 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alyse pomme 5L Jmal.png', description: 'Liquide vaisselle Alyse parfum pomme 5L, efficacité maximale pour usage intensif.' },
         ]
       },
-      {
-        id: 'eau-javel',
-        name: 'Eau de Javel',
-        products: [
-          { id: 94, name: 'Eau de Javel Domestos', brand: 'Domestos', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Eau de javel, désinfectant puissant pour sanitaires.' },
-          { id: 95, name: 'Eau de Javel Canard', brand: 'Canard', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Eau de javel, blanchit et désinfecte.' },
-          { id: 96, name: 'Eau de Javel Senteur', brand: 'Domestos', image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&h=500&fit=crop', description: 'Eau de javel parfumée, efficacité et fraîcheur.' },
-        ]
-      }
+      
     ]
   },
   {

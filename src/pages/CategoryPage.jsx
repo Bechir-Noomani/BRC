@@ -68,6 +68,7 @@ const CategoryPage = () => {
             src={category.image} 
             alt={category.name}
             className="w-full h-full object-cover"
+            style={{ filter: 'blur(2px)' }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         </motion.div>
@@ -291,22 +292,28 @@ const CategoryPage = () => {
                       >
                         <Link to={`/category/${categoryId}/subcategory/${subcategory.id}`}>
                           <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-500">
-                            {/* Image Section - Placeholder */}
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                              <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 0.3 }}
-                                className="absolute inset-0 flex items-center justify-center"
-                              >
-                                <div className="text-center">
-                                  <Package className="w-20 h-20 text-gray-400 mx-auto mb-3" />
-                                  <p className="text-sm font-medium text-gray-500">Image à venir</p>
-                                </div>
-                              </motion.div>
-                              
-                              {/* Decorative Elements */}
-                              <div className="absolute top-4 right-4 w-24 h-24 bg-red-500/10 rounded-full blur-3xl" />
-                              <div className="absolute bottom-4 left-4 w-32 h-32 bg-gray-400/10 rounded-full blur-3xl" />
+                            {/* Image Section */}
+                            <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                              {subcategory.image ? (
+                                <motion.img
+                                  whileHover={{ scale: 1.05 }}
+                                  transition={{ duration: 0.3 }}
+                                  src={subcategory.image}
+                                  alt={subcategory.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              ) : (
+                                <motion.div
+                                  whileHover={{ scale: 1.05 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200"
+                                >
+                                  <div className="text-center">
+                                    <Package className="w-20 h-20 text-gray-400 mx-auto mb-3" />
+                                    <p className="text-sm font-medium text-gray-500">Image à venir</p>
+                                  </div>
+                                </motion.div>
+                              )}
                             </div>
                             
                             {/* Content Section */}

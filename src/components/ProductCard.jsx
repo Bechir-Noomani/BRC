@@ -12,7 +12,7 @@ const ProductCard = ({ product, index = 0 }) => {
       whileHover={{ y: -8 }}
     >
       <Link to={`/product/${product.id}`}>
-        <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-600">
+        <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-800 hover:border-red-600">
           {/* Image Container */}
           <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
             <motion.img
@@ -22,7 +22,6 @@ const ProductCard = ({ product, index = 0 }) => {
               alt={product.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
             {/* Floating badge - Only show if brand exists */}
             {product.brand && (
