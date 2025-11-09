@@ -46,8 +46,8 @@ export const categories = [
           { id: 21, name: 'Sauce Frites', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce-sauce frites-bonna.png', description: 'Sauce spéciale frites, accompagnement parfait.' },
           { id: 22, name: 'Mayonnaise', brand: 'Bonna', image: '/products/restoration/SAUCE/sause-mayounese-bonna.png', description: 'Mayonnaise crémeuse et onctueuse, parfaite pour sandwiches.' },
           { id: 23, name: 'Mayonnaise', brand: 'Bonna', image: '/products/restoration/SAUCE/sause-mayonse-bonna.png', description: 'Mayonnaise Bonna, texture onctueuse.' },
-          { id: 24, name: 'Mayonnaise', brand: 'Mayolla', image: '/products/restoration/SAUCE/sauce-mayonese- mayolla.png', description: 'Mayonnaise de qualité, goût raffiné.' },
-          { id: 25, name: 'Mayonnaise', brand: 'Dorella', image: '/products/restoration/SAUCE/sauce- mayonese- dorella.png', description: 'Mayonnaise Dorella, texture crémeuse et onctueuse.' },
+          { id: 24, name: 'Mayonnaise Mayolla', brand: 'Agro Food', image: '/products/restoration/SAUCE/sauce-mayonese- mayolla.png', description: 'Mayonnaise de qualité, goût raffiné.' },
+          { id: 25, name: 'Mayonnaise Dorella', brand: 'Agro Food', image: '/products/restoration/SAUCE/sauce- mayonese- dorella.png', description: 'Mayonnaise Dorella, texture crémeuse et onctueuse.' },
           { id: 26, name: 'Sauce Algérienne', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce- sause algérienne-bonna.png', description: 'Sauce algérienne traditionnelle, prête à consommer.' },
         ]
       },
