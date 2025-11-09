@@ -10,82 +10,68 @@ export const categories = [
         id: 'harissa',
         name: 'Harissa',
         products: [
-          { id: 1, name: 'Harissa Tharhira', brand: 'Tharhira', image: '/PRODOUI brc/Restoration/THARHIRA.png', description: 'Harissa traditionnelle tunisienne, pimentée et savoureuse, parfaite pour accompagner vos plats.' },
+          { id: 1, name: 'Harissa Tharhira 4kg', brand: 'Tharhira', image: '/products/restoration/HARISA/harisa-tharhira 4gk-.png', description: 'Harissa traditionnelle tunisienne, pimentée et savoureuse, parfaite pour accompagner vos plats.' },
+          { id: 2, name: 'Harissa 2kg', brand: 'Sahliya', image: '/products/restoration/HARISA/harisa-harisa 2kg-sahliya.png', description: 'Harissa authentique Sahliya, goût intense et savoureux.' },
+          { id: 3, name: 'Harissa Special 2kg', brand: 'Special', image: '/products/restoration/HARISA/harisa special 2kg-.png', description: 'Harissa spéciale forte, pour les amateurs de piquant.' },
         ]
       },
       {
         id: 'thon',
         name: 'Thon',
         products: [
-          { id: 4, name: 'Thon El Bahar', brand: 'Thon El Bahar', image: '/PRODOUI brc/Restoration/THONE EL BAHAR.png', description: 'Thon de qualité supérieure, source de protéines de qualité.' },
-          { id: 5, name: 'Thon El Fakhama', brand: 'Thon El Fakhama', image: '/PRODOUI brc/Restoration/THONE EL FAKHAMA.png', description: 'Thon premium, savoureux et onctueux.' },
-          { id: 6, name: 'Thon Sidi Ali', brand: 'Sidi Ali', image: '/PRODOUI brc/Restoration/THONE SIDI ALI.png', description: 'Thon nature de qualité, goût authentique.' },
-          { id: 7, name: 'Thon Zad El Bahar', brand: 'Zad El Bahar', image: '/PRODOUI brc/Restoration/THONE ZAD EL BAHAR.png', description: 'Thon en conserve, parfait pour vos préparations.' },
+          { id: 4, name: 'Thon Fakhama 1.7kg', brand: 'BKFood', image: '/products/restoration/THON/thon-fakhama 1.7kg-bkfood.png', description: 'Thon premium, savoureux et onctueux.' },
+          { id: 5, name: 'Thon Le Marin 2kg', brand: 'La Vague Bleue', image: '/products/restoration/THON/thon-le marin 2kg-la vague bleue.png', description: 'Thon de qualité supérieure, source de protéines de qualité.' },
+          { id: 6, name: 'Thon Sidi Ali 1.7kg', brand: 'BKFood', image: '/products/restoration/THON/thon-sidi ali 1.7kg-bkfood.png', description: 'Thon nature de qualité, goût authentique.' },
+          { id: 7, name: 'Thon Zed El Bahr 2kg', brand: 'BKFood', image: '/products/restoration/THON/thon-zed el bahr2kg-bkfood.png', description: 'Thon en conserve, parfait pour vos préparations.' },
         ]
       },
       {
         id: 'mozzarella',
         name: 'Mozzarella',
         products: [
-          { id: 8, name: 'Bona Mozzarella', brand: 'Bona', image: '/PRODOUI brc/Restoration/BONA MOZARELA.png', description: 'Fromage mozzarella frais, idéal pour pizzas et salades.' },
-          { id: 9, name: 'Le Fondant Mozzarella', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/L FANDONT MOZARELA.png', description: 'Mozzarella de qualité premium, texture fondante.' },
-          { id: 10, name: 'Mozzarella Arbi', brand: 'Arbi', image: '/PRODOUI brc/Restoration/MOZARELA ARBI.png', description: 'Mozzarella traditionnelle, goût authentique.' },
-          { id: 11, name: 'Mozza Pizza', brand: 'Mozza Pizza', image: '/PRODOUI brc/Restoration/MOZZA PIZZA.png', description: 'Mozzarella spéciale pizza, fonte parfaite.' },
-        ]
-      },
-      {
-        id: 'mayonnaise',
-        name: 'Mayonnaise',
-        products: [
-          { id: 12, name: 'Bonna Mayonnaise', brand: 'Bonna', image: '/PRODOUI brc/Restoration/BONNA MAYOUNESE.png', description: 'Mayonnaise crémeuse et onctueuse, parfaite pour sandwiches.' },
-          { id: 13, name: 'Mayolite', brand: 'Mayolite', image: '/PRODOUI brc/Restoration/MAYOLITE.png', description: 'Mayonnaise allégée, moins de calories, même goût.' },
-          { id: 14, name: 'Mayolla', brand: 'Mayolla', image: '/PRODOUI brc/Restoration/MAYOLLA.png', description: 'Mayonnaise de qualité, goût raffiné.' },
-        ]
-      },
-      {
-        id: 'salade-grilles',
-        name: 'Salade Grillés',
-        products: [
-          { id: 15, name: 'Salade Algérienne', brand: 'Sauca Algérienne', image: '/PRODOUI brc/Restoration/SAUCA ALGERIENNE.png', description: 'Salade algérienne traditionnelle, prête à consommer.' },
-          { id: 16, name: 'Edame', brand: 'Edame', image: '/PRODOUI brc/Restoration/EDAME.png', description: 'Edamame de qualité, parfait pour vos salades.' },
+          { id: 8, name: 'Mozzarella Buna Mozza', brand: 'Buon Gusto', image: '/products/restoration/FORMAGE/formage-mazzarela buna mozza-buon gusto.png', description: 'Fromage mozzarella frais, idéal pour pizzas et salades.' },
+          { id: 9, name: 'Mozzarella 1kg', brand: 'Fatorie Coverly', image: '/products/restoration/FORMAGE/formage-mozzarella1kg -fatorie coverly.png', description: 'Mozzarella de qualité premium, texture fondante.' },
+          { id: 10, name: 'Mozzarella', brand: 'Landore', image: '/products/restoration/FORMAGE/formage-mazzarela-landore.jpg', description: 'Mozzarella traditionnelle, goût authentique.' },
+          { id: 11, name: 'Mozza Pizza', brand: 'Landor', image: '/products/restoration/FORMAGE/formage-mozza pizza-landor.png', description: 'Mozzarella spéciale pizza, fonte parfaite.' },
         ]
       },
       {
         id: 'sauces',
         name: 'Sauces',
         products: [
-          { id: 17, name: 'Sauce Pizza', brand: 'Sauce Pizza', image: '/PRODOUI brc/Restoration/SAUCE PIZZA.png', description: 'Sauce tomate spéciale pizza, goût authentique.' },
-          { id: 18, name: 'Sauce Barbecue', brand: 'Sauce Barbacio', image: '/PRODOUI brc/Restoration/SAUCE BARBACIO.png', description: 'Sauce barbecue, goût fumé et sucré.' },
-          { id: 19, name: 'Sauce à l\'Ail', brand: 'Sauce à l\'Ail', image: '/PRODOUI brc/Restoration/SAUCE A LAIL.png', description: 'Sauce à l\'ail crémeuse, parfaite pour vos plats.' },
-          { id: 20, name: 'Sauce Cheese', brand: 'Sauce Cheese', image: '/PRODOUI brc/Restoration/SAUCE SHEESE.png', description: 'Sauce fromagère onctueuse, idéale pour nachos et burgers.' },
-          { id: 21, name: 'Sauce Fruité', brand: 'Sauce Frute', image: '/PRODOUI brc/Restoration/SAUCE FRUTE.png', description: 'Sauce fruitée sucrée-salée, accompagnement original.' },
-          { id: 22, name: 'Ketchup', brand: 'Khatchap', image: '/PRODOUI brc/Restoration/KHATCHAP.png', description: 'Ketchup de qualité, goût tomate authentique.' },
-          { id: 23, name: 'Dolla Sauce', brand: 'Dolla', image: '/PRODOUI brc/Restoration/DOLLA SAUCE.png', description: 'Sauce spéciale, goût unique et savoureux.' },
+          { id: 17, name: 'Sauce Pizza', brand: 'Sabra', image: '/products/restoration/SAUCE/sauce-sauce pizza-sabra.jpg', description: 'Sauce tomate spéciale pizza, goût authentique.' },
+          { id: 18, name: 'Sauce Barbecue', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce-sauce barbecue -bonna.png', description: 'Sauce barbecue, goût fumé et sucré.' },
+          { id: 19, name: 'Sauce à l\'Ail', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce-sause a l\'ail-bonna.png', description: 'Sauce à l\'ail crémeuse, parfaite pour vos plats.' },
+          { id: 20, name: 'Sauce Cheezy', brand: 'Dorella', image: '/products/restoration/SAUCE/sause-sauce cheezy-dorella.png', description: 'Sauce fromagère onctueuse, idéale pour nachos et burgers.' },
+          { id: 21, name: 'Sauce Frites', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce-sauce frites-bonna.png', description: 'Sauce spéciale frites, accompagnement parfait.' },
+          { id: 22, name: 'Mayonnaise', brand: 'Bonna', image: '/products/restoration/SAUCE/sause-mayounese-bonna.png', description: 'Mayonnaise crémeuse et onctueuse, parfaite pour sandwiches.' },
+          { id: 23, name: 'Mayonnaise', brand: 'Bonna', image: '/products/restoration/SAUCE/sause-mayonse-bonna.png', description: 'Mayonnaise Bonna, texture onctueuse.' },
+          { id: 24, name: 'Mayonnaise', brand: 'Mayolla', image: '/products/restoration/SAUCE/sauce-mayonese- mayolla.png', description: 'Mayonnaise de qualité, goût raffiné.' },
+          { id: 25, name: 'Mayonnaise', brand: 'Dorella', image: '/products/restoration/SAUCE/sauce- mayonese- dorella.png', description: 'Mayonnaise Dorella, texture crémeuse et onctueuse.' },
+          { id: 26, name: 'Sauce Algérienne', brand: 'Bonna', image: '/products/restoration/SAUCE/sauce- sause algérienne-bonna.png', description: 'Sauce algérienne traditionnelle, prête à consommer.' },
         ]
       },
       {
         id: 'charcuteries',
         name: 'Charcuteries',
         products: [
-          { id: 24, name: 'Jambon', brand: 'Jambon', image: '/PRODOUI brc/Restoration/JAMBON.png', description: 'Jambon de qualité supérieure, parfait pour sandwiches et pizzas.' },
-          { id: 25, name: 'Salami', brand: 'Salami', image: '/PRODOUI brc/Restoration/SALAMI.png', description: 'Salami traditionnel, goût authentique et savoureux.' },
+          { id: 27, name: 'Jambon', brand: 'المزرعة', image: '/products/restoration/charcuteries/charcuteries-jambon-المزرعة.png', description: 'Jambon de qualité supérieure, parfait pour sandwiches et pizzas.' },
+          { id: 28, name: 'Salami', brand: 'المزرعة', image: '/products/restoration/charcuteries/charcuteries-salami-المزرعة.jpg', description: 'Salami traditionnel, goût authentique et savoureux.' },
         ]
       },
       {
         id: 'fromages',
         name: 'Fromages',
         products: [
-          { id: 26, name: 'Fromage Râpé Gruyère', brand: 'Formage Rape Grue', image: '/PRODOUI brc/Restoration/FORMAGE RAPE GRUE.png', description: 'Fromage gruyère râpé, parfait pour gratins et pizzas.' },
-          { id: 27, name: 'Gouda', brand: 'Gouda', image: '/PRODOUI brc/Restoration/GOUDA.png', description: 'Fromage Gouda de qualité, goût doux et crémeux.' },
-          { id: 28, name: 'Landore Râpé', brand: 'Landore', image: '/PRODOUI brc/Restoration/LANDORE RAPE.png', description: 'Fromage râpé Landore, pratique pour vos préparations.' },
-          { id: 29, name: 'Le Fondant Râpé', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/LE FONDANTE RAPE.png', description: 'Fromage râpé Le Fondant, fonte parfaite.' },
-          { id: 30, name: 'Slice Le Fondant', brand: 'Le Fondant', image: '/PRODOUI brc/Restoration/SLICE LE FONDANTE.png', description: 'Fromage en tranches Le Fondant, idéal pour burgers.' },
-          { id: 31, name: 'Slice Campo', brand: 'Campo', image: '/PRODOUI brc/Restoration/SLACE CAMPO.png', description: 'Fromage en tranches Campo, parfait pour sandwiches.' },
-          { id: 32, name: 'Mon Régal', brand: 'Mon Régal', image: '/PRODOUI brc/Restoration/MON REGAL.png', description: 'Fromage Mon Régal, saveur délicate et raffinée.' },
-          { id: 33, name: 'Madame Kamoun', brand: 'Madame Kamoun', image: '/PRODOUI brc/Restoration/MADAME KAMOUN.png', description: 'Fromage Madame Kamoun, qualité artisanale.' },
-          { id: 34, name: 'Dorela', brand: 'Dorela', image: '/PRODOUI brc/Restoration/DORELA.png', description: 'Fromage Dorela, goût authentique et crémeux.' },
-          { id: 35, name: 'Sahlia', brand: 'Sahlia', image: '/PRODOUI brc/Restoration/SAHLIA.png', description: 'Fromage Sahlia, texture onctueuse et savoureuse.' },
-          { id: 36, name: 'Spécial', brand: 'Spésial', image: '/PRODOUI brc/Restoration/SPESIAL.png', description: 'Fromage spécial, mélange unique de saveurs.' },
+          { id: 29, name: 'Fromage Râpé Gruyère 1kg', brand: 'Mont Régal', image: '/products/restoration/FORMAGE/formage-formage rapé gruyéne 1kg-mont régal .png', description: 'Fromage gruyère râpé, parfait pour gratins et pizzas.' },
+          { id: 30, name: 'Fromage Râpé Emmental 1kg', brand: 'Mont Régal', image: '/products/restoration/FORMAGE/formage-formage rapé emmental 1kg-mont régal .png', description: 'Fromage emmental râpé, fonte parfaite pour vos plats.' },
+          { id: 31, name: 'Fromage Râpé 1kg', brand: 'Le Fondant', image: '/products/restoration/FORMAGE/formage-formage rapé 1kg-le fondant.png', description: 'Fromage râpé Le Fondant, pratique pour vos préparations.' },
+          { id: 32, name: 'Block Emmental', brand: 'Landor', image: '/products/restoration/FORMAGE/formage-Block Emmental-landor.png', description: 'Block de fromage Emmental, pour découpe maison.' },
+          { id: 33, name: 'Slice', brand: 'Le Fondant', image: '/products/restoration/FORMAGE/formage-slice-le fondant.png', description: 'Fromage en tranches Le Fondant, idéal pour burgers.' },
+          { id: 34, name: 'Slice Campo', brand: 'Landor', image: '/products/restoration/FORMAGE/formage-slice campo-landor.jpg', description: 'Fromage en tranches Campo, parfait pour sandwiches.' },
+          { id: 35, name: 'Campo', brand: 'Landor', image: '/products/restoration/FORMAGE/formage-campo-landor.jpg', description: 'Fromage Campo, saveur délicate et raffinée.' },
+          { id: 36, name: 'Gouda 1kg', brand: 'Montrégal', image: '/products/restoration/FORMAGE/formage-gouda 1kg-montrégal.png', description: 'Fromage Gouda de qualité, goût doux et crémeux.' },
+          { id: 37, name: 'Edam 1kg', brand: 'Montrégal', image: '/products/restoration/FORMAGE/formage-edam 1kg-montrégal.png', description: 'Fromage Edam, goût authentique et crémeux.' },
         ]
       }
     ]
@@ -294,9 +280,9 @@ export const categories = [
         name: 'Désodorisant du Sol',
         image: '/products/Nettoyage/desodorisant-sol-logo.jpg',
         products: [
-          { id: 85, name: 'El Basatine 5L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-El basatine 5L Jmal.png', description: 'Désodorisant sol El Basatine 5L, fraîcheur longue durée pour tous types de sols.' },
-          { id: 86, name: 'Fawah 3L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-fawah 3L Jmal.png', description: 'Désodorisant sol Fawah 3L, parfum agréable et efficacité durable.' },
-          { id: 87, name: 'Fawah 5L', brand: 'Jmal', image: '/products/Nettoyage/desodorisant-fawah 5L Jmal.png', description: 'Désodorisant sol Fawah 5L, format économique pour usage professionnel.' },
+          { id: 85, name: 'El Basatine 5L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/desodorisant-El basatine 5L Jmal.png', description: 'Désodorisant sol El Basatine 5L, fraîcheur longue durée pour tous types de sols.' },
+          { id: 86, name: 'Fawah 3L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/desodorisant-fawah 3L Jmal.png', description: 'Désodorisant sol Fawah 3L, parfum agréable et efficacité durable.' },
+          { id: 87, name: 'Fawah 5L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/desodorisant-fawah 5L Jmal.png', description: 'Désodorisant sol Fawah 5L, format économique pour usage professionnel.' },
         ]
       },
       {
@@ -304,10 +290,10 @@ export const categories = [
         name: 'Liquide Linge',
         image: '/products/Nettoyage/liquide-linge-logo.jpg',
         products: [
-          { id: 88, name: 'Finesse 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finesse 1L Jmal.png', description: 'Lessive liquide Finesse 1L, nettoyage en profondeur et fraîcheur intense.' },
-          { id: 89, name: 'Finesse 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finesse 3L Jmal.png', description: 'Lessive liquide Finesse 3L, élimine les taches tenaces efficacement.' },
-          { id: 90, name: 'Finesse 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-finnesse 5L Jmal.png', description: 'Lessive liquide Finesse 5L, format économique pour professionnels.' },
-          { id: 128, name: 'Ghassel 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-linge-ghassel 3L Jmal.png', description: 'Lessive liquide Ghassel 3L, performance optimale et parfum durable.' },
+          { id: 88, name: 'Finesse 1L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-linge-finesse 1L Jmal.png', description: 'Lessive liquide Finesse 1L, nettoyage en profondeur et fraîcheur intense.' },
+          { id: 89, name: 'Finesse 3L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-linge-finesse 3L Jmal.png', description: 'Lessive liquide Finesse 3L, élimine les taches tenaces efficacement.' },
+          { id: 90, name: 'Finesse 5L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-linge-finnesse 5L Jmal.png', description: 'Lessive liquide Finesse 5L, format économique pour professionnels.' },
+          { id: 128, name: 'Ghassel 3L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-linge-ghassel 3L Jmal.png', description: 'Lessive liquide Ghassel 3L, performance optimale et parfum durable.' },
         ]
       },
       {
@@ -315,12 +301,12 @@ export const categories = [
         name: 'Liquide Vaisselle',
         image: '/products/Nettoyage/liquide-vaisselle-logo.jpg',
         products: [
-          { id: 91, name: 'Alys Pomme 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys 1L pomme Jmal.png', description: 'Liquide vaisselle Alys parfum pomme 1L, dégraisse efficacement.' },
-          { id: 92, name: 'Alys Pomme 2L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-Alys-Pomme_2L_Jmal_.png', description: 'Liquide vaisselle Alys parfum pomme 2L, mousse abondante et durable.' },
-          { id: 93, name: 'Alys Citron 1L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys citron 1L Jmal.png', description: 'Liquide vaisselle Alys parfum citron 1L, fraîcheur et efficacité.' },
-          { id: 129, name: 'Alys Citron 3L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alys 3L citron Jmal.png', description: 'Liquide vaisselle Alys parfum citron 3L, dégraissant puissant.' },
-          { id: 130, name: 'Alyse Citron 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alyse 5L citron Jmal.png', description: 'Liquide vaisselle Alyse parfum citron 5L, format professionnel économique.' },
-          { id: 131, name: 'Alyse Pomme 5L', brand: 'Jmal', image: '/products/Nettoyage/liquide-vaisselle-alyse pomme 5L Jmal.png', description: 'Liquide vaisselle Alyse parfum pomme 5L, efficacité maximale pour usage intensif.' },
+          { id: 91, name: 'Alys Pomme 1L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-alys 1L pomme Jmal.png', description: 'Liquide vaisselle Alys parfum pomme 1L, dégraisse efficacement.' },
+          { id: 92, name: 'Alys Pomme 2L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-Alys-Pomme_2L_Jmal_.png', description: 'Liquide vaisselle Alys parfum pomme 2L, mousse abondante et durable.' },
+          { id: 93, name: 'Alys Citron 1L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-alys citron 1L Jmal.png', description: 'Liquide vaisselle Alys parfum citron 1L, fraîcheur et efficacité.' },
+          { id: 129, name: 'Alys Citron 3L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-alys 3L citron Jmal.png', description: 'Liquide vaisselle Alys parfum citron 3L, dégraissant puissant.' },
+          { id: 130, name: 'Alyse Citron 5L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-alyse 5L citron Jmal.png', description: 'Liquide vaisselle Alyse parfum citron 5L, format professionnel économique.' },
+          { id: 131, name: 'Alyse Pomme 5L', brand: '/products/Nettoyage/logogmal.png', image: '/products/Nettoyage/liquide-vaisselle-alyse pomme 5L Jmal.png', description: 'Liquide vaisselle Alyse parfum pomme 5L, efficacité maximale pour usage intensif.' },
         ]
       },
       

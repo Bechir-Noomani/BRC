@@ -10,11 +10,12 @@ const ProductCard = ({ product, index = 0 }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
       whileHover={{ y: -8 }}
+      className="h-full flex"
     >
-      <Link to={`/product/${product.id}`}>
-        <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-800 hover:border-red-600">
+      <Link to={`/product/${product.id}`} className="w-full">
+        <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-800 hover:border-red-600 flex flex-col">
           {/* Image Container */}
-          <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
+          <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex-shrink-0">
             <motion.img
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.5 }}
@@ -25,20 +26,28 @@ const ProductCard = ({ product, index = 0 }) => {
             
             {/* Floating badge - Only show if brand exists */}
             {product.brand && (
-              <div className="absolute top-4 right-4 px-3 py-1.5 bg-red-600 text-white rounded-full text-xs font-bold shadow-lg">
-                {product.brand}
+              <div className="absolute top-4 right-4 px-3 py-1.5 ">
+                {product.brand.startsWith('/') || product.brand.startsWith('http') ? (
+                  <img 
+                    src={product.brand} 
+                    alt="Brand logo" 
+                    className="h-12 w-auto object-contain"
+                  />
+                ) : (
+                  <span className="text-xs font-bold text-red-600">{product.brand}</span>
+                )}
               </div>
             )}
           </div>
 
           {/* Content */}
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
+          <div className="p-6 bg-gradient-to-r from-gray-900 via-gray-800 to-black flex-1 flex flex-col">
+            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
               {product.name}
             </h3>
             
-            <div className="flex items-center justify-between pt-4 border-t-2 border-gray-200">
-              <span className="text-sm font-semibold text-gray-600 flex items-center gap-2">
+            <div className="flex items-center justify-between pt-4 border-t-2 border-gray-200 mt-auto">
+              <span className="text-sm font-semibold text-white flex items-center gap-2">
                 <Package className="w-4 h-4" />
                 Voir détails
               </span>
