@@ -74,6 +74,22 @@ const CategoryPage = () => {
         </motion.div>
         
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+          {/* Back Button */}
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mb-4"
+          >
+            <Link 
+              to="/categories"
+              className="inline-flex items-center gap-2 px-3 py-2 text-white/90 hover:text-white transition-all group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              <span className="font-medium text-sm">Retour aux catégories</span>
+            </Link>
+          </motion.div>
+
           {/* Breadcrumb */}
           <motion.div
             initial={{ x: -30, opacity: 0 }}
@@ -103,24 +119,6 @@ const CategoryPage = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Back Button Bar */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="bg-white border-b border-gray-200 shadow-sm"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link 
-            to="/categories"
-            className="inline-flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="font-medium">Retour</span>
-          </Link>
-        </div>
-      </motion.div>
 
       {/* Mobile Sticky Filter Dropdown - Only show for categories with subcategories */}
       {category.hasSubcategories && (
@@ -209,7 +207,7 @@ const CategoryPage = () => {
       )}
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Desktop Sidebar - Only show for categories with subcategories */}
           {category.hasSubcategories && (
@@ -289,11 +287,12 @@ const CategoryPage = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05, duration: 0.3 }}
                         whileHover={{ y: -8 }}
+                        className="h-full"
                       >
-                        <Link to={`/category/${categoryId}/subcategory/${subcategory.id}`}>
-                          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-500">
+                        <Link to={`/category/${categoryId}/subcategory/${subcategory.id}`} className="block h-full">
+                          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full border-2 border-transparent hover:border-red-500 flex flex-col">
                             {/* Image Section */}
-                            <div className="relative aspect-[4/3] overflow-hidden bg-white">
+                            <div className="relative h-72 overflow-hidden bg-white flex-shrink-0">
                               {subcategory.image ? (
                                 <motion.img
                                   whileHover={{ scale: 1.05 }}
@@ -317,15 +316,12 @@ const CategoryPage = () => {
                             </div>
                             
                             {/* Content Section */}
-                            <div className="p-8">
-                              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-red-500 transition-colors">
+                            <div className="p-8 flex-1 flex flex-col">
+                              <h3 className="text-2xl font-extrabold text-white mb-8 group-hover:text-red-500 transition-colors">
                                 {subcategory.name}
                               </h3>
-                              <p className="text-white/80 text-sm mb-6 leading-relaxed">
-                                Explorez {subcategory.products.length} produits de qualité
-                              </p>
                               
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between mt-auto">
                                 <span className="text-sm font-semibold text-white/70">Voir la collection</span>
                                 <ChevronRight className="w-6 h-6 text-red-500" />
                               </div>
@@ -337,7 +333,7 @@ const CategoryPage = () => {
                   </div>
                 ) : (
                   // Show products directly for flat categories
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {category.products.map((product, idx) => (
                       <ProductCard key={product.id} product={product} index={idx} />
                     ))}

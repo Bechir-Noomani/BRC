@@ -10,28 +10,28 @@ const ProductCard = ({ product, index = 0 }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
       whileHover={{ y: -8 }}
-      className="h-full flex"
+      className="h-full"
     >
-      <Link to={`/product/${product.id}`} className="w-full">
+      <Link to={`/product/${product.id}`} className="block h-full">
         <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full border-2 border-gray-800 hover:border-red-600 flex flex-col">
           {/* Image Container */}
-          <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 flex-shrink-0">
+          <div className="relative w-full h-64 overflow-hidden bg-white flex-shrink-0">
             <motion.img
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5 }}
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
-            
+
             {/* Floating badge - Only show if brand exists */}
             {product.brand && (
-              <div className="absolute top-4 right-4 px-3 py-1.5 ">
+              <div className="absolute top-2 right-2 w-18 h-10 flex items-center justify-center">
                 {product.brand.startsWith('/') || product.brand.startsWith('http') ? (
-                  <img 
-                    src={product.brand} 
-                    alt="Brand logo" 
-                    className="h-12 w-auto object-contain"
+                  <img
+                    src={product.brand}
+                    alt="Brand logo"
+                    className="max-w-full max-h-full object-contain"
                   />
                 ) : (
                   <span className="text-xs font-bold text-red-600">{product.brand}</span>
@@ -45,7 +45,7 @@ const ProductCard = ({ product, index = 0 }) => {
             <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
               {product.name}
             </h3>
-            
+
             <div className="flex items-center justify-between pt-4 border-t-2 border-gray-200 mt-auto">
               <span className="text-sm font-semibold text-white flex items-center gap-2">
                 <Package className="w-4 h-4" />

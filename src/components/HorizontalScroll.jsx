@@ -4,15 +4,18 @@ import { motion } from 'framer-motion';
 const HorizontalScroll = () => {
   // Brands array
   const brands = [
-    { src: "/Brandes/aromalux.PNG", name: "Aromalux" },
-    { src: "/Brandes/baristella.PNG", name: "Baristella" },
-    { src: "/Brandes/dokrem.PNG", name: "Dokrem" },
-    { src: "/Brandes/fructa.PNG", name: "Fructa" },
-    { src: "/Brandes/gadida.PNG", name: "Gadida" },
-    { src: "/Brandes/gias.PNG", name: "Gias" },
-    { src: "/Brandes/Lartisto.PNG", name: "Lartisto" },
-    { src: "/Brandes/said.PNG", name: "Said" },
-    { src: "/Brandes/vanoise.PNG", name: "Vanoise" },
+    { src: "/logo/sahliya-logo.png", name: "Sahliya" },
+    { src: "/logo/bkfood-logo.png", name: "BK Food" },
+    { src: "/logo/la_vague_bleue-logo.png", name: "La Vague Bleue" },
+    { src: "/logo/Sabra_logo.webp", name: "Sabra" },
+    { src: "/logo/bonna_logo.webp", name: "Bonna" },
+    { src: "/logo/dorella_logo.webp", name: "Dorella" },
+    { src: "/logo/mayola_logo.webp", name: "Mayola" },
+    { src: "/logo/elmazraa-logo.webp", name: "El Mazraa" },
+    { src: "/logo/fattoriecovelli_logo.webp", name: "Fattorie Covelli" },
+    { src: "/logo/landor_logo.webp", name: "Landor" },
+    { src: "/logo/montregal_logo.webp", name: "Montregal" },
+    { src: "/logo/lefondant_logo.webp", name: "Le Fondant" },
   ];
 
   // Triple the array for seamless infinite scroll
@@ -55,12 +58,12 @@ const HorizontalScroll = () => {
         {allBrands.map((brand, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 w-[160px] h-[110px] md:w-[200px] md:h-[140px] rounded-xl overflow-hidden bg-gray-100 shadow-md"
+            className="flex-shrink-0 w-[160px] h-[110px] md:w-[200px] md:h-[140px]"
           >
             <img 
               src={brand.src} 
               alt={brand.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain p-4"
             />
           </div>
         ))}
